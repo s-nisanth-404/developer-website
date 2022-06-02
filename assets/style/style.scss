@@ -1,0 +1,819 @@
+/* ===== Font For Website ===== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
+
+/* ===== Standard Color For Website ===== */
+$color: #6e57e0;
+
+/* ===== Basic Requirement ===== */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  all: unset;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+
+  h1 {
+    color: rgba(0, 0, 0, 1);
+  }
+
+  h2 {
+    color: rgba(0, 0, 0, 1);
+  }
+
+  p {
+    line-height: 1.5;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  ul {
+    list-style: none;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  a {
+    text-decoration: none;
+    pointer-events: all;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  section {
+    min-height: 100vh;
+  }
+
+  .special {
+    font-family: "Playball", cursive;
+  }
+}
+
+header {
+  z-index: 2000;
+}
+
+.fixed {
+  z-index: 1500;
+}
+
+.social-wrapper {
+  z-index: 1500;
+}
+
+.wrapper {
+  z-index: 1000;
+}
+
+/* ===== Custom Scrollbar ===== */
+html::-webkit-scrollbar {
+  width: 0.7vw;
+}
+
+html::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Social Links Start ===== */
+
+.social-wrapper {
+  height: calc(100vh - 3rem);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 2rem;
+
+  ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 25rem;
+    justify-content: space-between;
+
+    li {
+      background: $color;
+      border-radius: 50%;
+      transition: all 0.3s ease-in;
+    }
+    a {
+      .social-icon {
+        pointer-events: none;
+        margin-top: 0.5rem;
+        margin-bottom: 0.2rem;
+        padding: 1px;
+        width: 2.8rem;
+        height: 1.8rem;
+        transition: all 0.75s ease-out;
+      }
+    }
+  }
+}
+/* ===== Social Links End ===== */
+
+/* ===== First Page Start ===== */
+.first-page {
+  height: calc(100vh - 3rem) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+
+  .one {
+    position: relative;
+    font-size: calc(100vw - 90vw) !important;
+    pointer-events: none;
+    font-weight: 400;
+  }
+  .one .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+
+  .one .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+  .two {
+    font-size: calc(100vw - 95vw) !important;
+    color: rgba(0, 0, 0, 0.3) !important;
+    pointer-events: none;
+    font-weight: 100;
+  }
+
+  .RegardingMe .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+}
+/* ===== First Page End ===== */
+
+/* ===== Nav Bar Start ===== */
+nav {
+  position: sticky;
+  top: 0;
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: whitesmoke;
+  overflow: hidden;
+  border-radius: 0px 0px 20px 20px;
+  box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+
+  .Logo {
+    margin-left: 2rem;
+    width: 8rem;
+  }
+
+  .links {
+    margin-right: 2rem;
+    height: 100%;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+
+    .noUnderLine {
+      pointer-events: none;
+      width: 0%;
+      height: 0%;
+    }
+
+    li {
+      position: relative;
+      font-size: 1.5rem;
+      ::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 0%;
+        height: 4px;
+        background: $color;
+        transition: 0.75s ease;
+      }
+
+      :hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.hamburger {
+  margin-right: 1.5rem;
+  display: none;
+  cursor: pointer;
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 5px 0;
+    transition: all 0.4s ease-in-out;
+    border-radius: 25px;
+  }
+
+  .bar1 {
+    width: 30px;
+  }
+  .bar2 {
+    width: 20px;
+  }
+  .bar3 {
+    width: 25px;
+  }
+}
+
+.change .bar1 {
+  margin-top: 7px !important;
+  transform: rotate(-45deg);
+}
+
+.change .bar3 {
+  margin-top: -17px !important;
+  transform: rotate(45deg);
+  width: 30px;
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.active {
+  color: $color;
+}
+
+.fixed {
+  position: fixed;
+  width: 0%;
+  transition: all 0.75s ease-in-out;
+}
+
+.mobile {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: $color;
+
+  .ul-mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+
+    a {
+      font-size: 1.5rem;
+      color: white;
+      display: none;
+    }
+  }
+}
+/* ===== Nav Bar End ===== */
+
+.text {
+  margin-top: 2rem !important;
+  text-align: center;
+  .centerText {
+    display: block;
+    font-size: 3rem;
+  }
+  .centerMText {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2.5rem;
+    color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.aboutMe {
+  margin-right: 8rem;
+  margin-left: 8rem;
+  margin-top: 0.5rem;
+
+  p {
+    font-size: 2rem;
+
+    .specialJobsText {
+      font-size: 2.3rem;
+      color: rgba(0, 0, 0, 0.6);
+      font-family: "Playball", cursive;
+    }
+
+    &::first-letter {
+      padding: 0 0rem 0rem 5rem;
+      font-weight: bold;
+      font-size: 3rem;
+    }
+  }
+}
+
+.aboutContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .aboutOne {
+    margin-left: 8rem;
+
+    h3 {
+      margin-top: 2rem;
+      margin-right: 0.5rem;
+      font-size: 2rem;
+    }
+
+    ul {
+      margin-top: 2rem;
+      margin-left: 2rem;
+      font-size: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      line-height: 2;
+      list-style: disc;
+    }
+  }
+
+  .aboutTwo {
+    margin-right: 8rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    img {
+      border-radius: 10px;
+      width: 400px;
+      pointer-events: none;
+    }
+  }
+}
+
+.myEmail {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 8rem;
+  margin-left: 8rem;
+  margin-top: 2rem;
+
+  .Myform {
+    font-size: 1.5rem;
+    width: 400px;
+    height: 50px;
+    border: none;
+    transition: all 0.75s ease-in-out;
+    border-bottom: 2px solid $color;
+    &::placeholder {
+      color: lightgreen;
+    }
+  }
+}
+
+.xForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 8em;
+  margin-left: 8rem;
+  margin-top: 2rem;
+
+  .btn {
+    font-size: 2rem;
+    cursor: pointer;
+    background: $color;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    transition: all 0.75s ease-in-out;
+    &:hover {
+      background: whitesmoke;
+      color: $color;
+    }
+  }
+
+  .message {
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    resize: none;
+    padding: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+    &::placeholder {
+      color: lightgreen;
+    }
+  }
+}
+
+.notification {
+  position: fixed;
+  bottom: calc(100vh - 95vh);
+  right: calc(100vh - 300vh);
+  width: 300px;
+  height: 150px;
+  transition: all 0.75s ease;
+  .newNotification {
+    border-radius: 10px;
+    box-shadow: 25px 25px 50px #d0d0d0, -25px -25px 50px #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.75s ease;
+
+    .king {
+      font-size: 1.8rem;
+    }
+
+    .queen {
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.arrow {
+  border: 2px solid rgb(220, 220, 130);
+  border-width: 0 3.5px 3.5px 0;
+  display: inline-block;
+  padding: 5px;
+}
+
+.right {
+  margin-left: 5px;
+  transform: rotate(-45deg);
+}
+
+.myPortfolio {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  margin-right: 8em;
+  margin-left: 8rem;
+  margin-top: 2rem;
+  align-items: center;
+
+  .portfolio {
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background: lightgoldenrodyellow;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0rem;
+    }
+
+    .view {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      height: 100%;
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+        cursor: pointer;
+        background: $color;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 15px;
+        transition: all 0.75s ease-in-out;
+        &:hover {
+          background: whitesmoke;
+          color: $color;
+        }
+      }
+    }
+
+    img {
+      width: 30rem;
+      border-radius: 10px;
+    }
+  }
+}
+
+footer {
+  height: 20vh;
+  background: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+
+  h2 {
+    font-size: 1.5rem;
+    color: lightcoral;
+  }
+}
+
+/* ========== Tablet ========== */
+@media only screen and (max-width: 1000px) {
+  .myPortfolio {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+
+    .portfolio {
+      .view {
+        h2 {
+          font-size: 2.2rem !important;
+        }
+
+        button {
+          font-size: 1.5rem !important;
+          &:hover {
+            background: whitesmoke;
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  .form {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+    flex-direction: column;
+    align-items: center;
+
+    .Myform {
+      width: 100%;
+      font-size: 1.5rem !important;
+    }
+  }
+  .xForm {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+    .btn {
+      font-size: 1.5rem !important;
+      width: 150px;
+      height: 40px;
+    }
+    .message {
+      font-size: 1.5rem !important;
+    }
+  }
+  .myEmail {
+    flex-direction: column;
+  }
+
+  .aboutContainer {
+    flex-direction: column-reverse;
+
+    .aboutOne {
+      margin-left: 1.5rem !important;
+      margin-right: 1.5rem !important;
+
+      h3 {
+        font-size: 1.8rem !important;
+      }
+
+      ul {
+        margin-left: 2.5rem !important;
+        font-size: 1.5rem !important;
+      }
+    }
+
+    .aboutTwo {
+      width: 100%;
+      padding: 0 2rem;
+
+      img {
+        width: 400px;
+      }
+    }
+  }
+  /* ===== First Page Start ===== */
+  .first-page {
+    height: calc(100vh - 2.5rem) !important;
+
+    .one {
+      font-size: calc(100vw - 80vw) !important;
+    }
+
+    .two {
+      font-size: calc(100vw - 93.5vw) !important;
+    }
+  }
+  /* ===== First Page End ===== */
+
+  .aboutMe {
+    margin-right: 1.5rem !important;
+    margin-left: 1.5rem !important;
+
+    p {
+      font-size: 1.5rem !important;
+
+      .specialJobsText {
+        font-size: 1.7rem !important;
+      }
+
+      &::first-letter {
+        padding: 0 0rem 0rem 2.5rem !important;
+        font-size: 2.5rem !important;
+      }
+    }
+  }
+
+  /* ===== Nav Bar Start ===== */
+  nav {
+    height: 2.5em !important;
+    .Logo {
+      margin-left: 1.5rem !important;
+      width: 5rem;
+    }
+  }
+
+  .mobile {
+    display: flex !important;
+    height: calc(100vh - 2.5rem) !important;
+  }
+
+  .links {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: inline-block !important;
+  }
+  /* ===== Nav Bar End ===== */
+
+  /* ===== Social Links Start ===== */
+  .social-wrapper {
+    display: none !important;
+  }
+  /* ===== Social Links End ===== */
+  .text {
+    .centerText {
+      font-size: 2.5rem;
+    }
+    .centerMText {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* ========== Mobile Size:L ========== */
+@media only screen and (max-width: 650px) {
+  .form {
+    .Myform {
+      font-size: 1.2rem !important;
+    }
+  }
+
+  .portfolio {
+    flex-direction: column;
+    .view {
+      gap: 0rem !important;
+      h2 {
+        margin-top: 1rem !important;
+        font-size: 2rem !important;
+      }
+
+      button {
+        margin-top: 1rem !important;
+        font-size: 1.2rem !important;
+        padding: 0.5rem !important;
+        &:hover {
+          background: whitesmoke;
+          color: $color;
+        }
+      }
+    }
+  }
+
+  .xForm {
+    .btn {
+      font-size: 1.2rem !important;
+    }
+    .message {
+      font-size: 1.2rem !important;
+    }
+  }
+  .aboutContainer {
+    flex-direction: column-reverse;
+
+    .aboutOne {
+      h3 {
+        font-size: 1.5rem !important;
+      }
+
+      ul {
+        font-size: 1.2rem !important;
+      }
+    }
+  }
+
+  .aboutMe {
+    p {
+      font-size: 1.2rem !important;
+      .specialJobsText {
+        font-size: 1.5rem !important;
+      }
+      &::first-letter {
+        font-size: 2.2rem !important;
+      }
+    }
+  }
+  /* ===== First Page End ===== */
+  .first-page {
+    height: calc(100vh - 2rem) !important;
+  }
+  /* ===== First Page End ===== */
+
+  .centerText {
+    font-size: 2.5rem !important;
+  }
+  .centerMText {
+    font-size: 1.2rem !important;
+  }
+
+  /* ===== Nav Bar Start ===== */
+  .mobile {
+    height: calc(100vh - 2rem) !important;
+  }
+
+  nav {
+    height: 2em !important;
+    .Logo {
+      margin-left: 1.5rem !important;
+      width: 5rem;
+    }
+  }
+  /* ===== Nav Bar End ===== */
+}
+
+/* ========== Very Very Small Device ========== */
+@media only screen and (max-width: 319px) {
+  .aboutOne {
+    ul {
+      grid-template-columns: repeat(1, auto) !important;
+    }
+  }
+}
+
+.animator {
+  transition: all 1s ease-in-out;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.animationText {
+  opacity: 1;
+  transform: translateY(0px);
+}
